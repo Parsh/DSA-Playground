@@ -2,21 +2,21 @@
  * Selection Sort
  * @param  {number[]} unsortedArray
  */
-const selectionSort = (unsortedArray: number[]): number[] => {
-    for(let i = 0; i < unsortedArray.length; i++){
+const selectionSort = (array: number[]): number[] => {
+    for(let i = 0; i < array.length; i++){
         let minimumIndex: number = i
-        for(let j = i + 1; j < unsortedArray.length; j++){
-            if(unsortedArray[j] < unsortedArray[minimumIndex]) {
+        for(let j = i + 1; j < array.length; j++){
+            if(array[j] < array[minimumIndex]) {
                 minimumIndex = j
             }
         }
         
-        if(minimumIndex !== i) [unsortedArray[i], unsortedArray[minimumIndex]] = [unsortedArray[minimumIndex], unsortedArray[i]]
+        if(minimumIndex !== i) [array[i], array[minimumIndex]] = [array[minimumIndex], array[i]]
     }
 
-    return unsortedArray
+    return array
 }
 
 // SMOKE TEST
-// const array = [3,20, 4, 8, 2, 0, -1]
-// console.log(selectionSort(array))
+// const unsortedArray = [3,20, 4, 8, 2, 0, -1]
+// console.log(selectionSort(unsortedArray))
