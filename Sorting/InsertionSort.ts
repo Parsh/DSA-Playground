@@ -18,5 +18,5 @@ const insertionSort = (array: number[] ): number[] => {
 }
 
 // SMOKE TEST
-const unsortedArray = [3,20, 4, 8, 2, 0, -1]
-console.log(insertionSort(unsortedArray))
+// const unsortedArray = [3,20, 4, 8, 2, 0, -1]
+// console.log(insertionSort(unsortedArray))
