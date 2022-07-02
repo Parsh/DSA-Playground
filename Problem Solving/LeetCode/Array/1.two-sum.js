@@ -23,14 +23,39 @@
 //  }
 
 /**
+ * two pointer solution: when all the two sum pairs needs to be collected, 
+ * independent of their order of appearance(sorting allowed)
+ * time complexity: O(nlogn)
+ */
+//  var twoSum = function (nums, target) {
+//   const twoSums = []
+//   let left = 0
+//   let right = nums.length - 1
+//   nums.sort((a, b) => a - b) // O(nlogn)
+
+//   while(left < right){
+//     const sum = nums[left] + nums[right]
+//     if(sum === target) {
+//       twoSums.push([left, right]) 
+//       left++
+//       right--
+//     }
+//     else if(sum < target) left++
+//     else right--
+//   }
+//   return twoSums 
+// };
+
+/**
  * time complexity: O(n), more space complexity
  */
-var twoSum = function (nums, target) {
-  const hashMap = {};
-  for (let i = 0; i < nums.length; i++) {
-    if (hashMap[nums[i]] !== undefined) {
-      return [hashMap[nums[i]], i];
-    } else hashMap[target - nums[i]] = i;
-  }
-};
+// var twoSum = function (nums, target) {
+//   const hashMap = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (hashMap[nums[i]] !== undefined) {
+//       return [hashMap[nums[i]], i];
+//     } else hashMap[target - nums[i]] = i;
+//   }
+// };
+
 // @lc code=end
