@@ -6,6 +6,10 @@
 
 // @lc code=start
 /**
+ * complexity O(n)
+ * note: longest Palindrome = letter pairs + single letter(at center, if available)
+ * ex: 'ababc', there are two letter pairs aa, bb plus we also have a single letter c
+ * therefore, longest palindrome: 4(aabb) + 1(c) = 5, one formation could be abcba
  * @param {string} s
  * @return {number}
  */
