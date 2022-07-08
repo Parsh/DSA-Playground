@@ -91,7 +91,7 @@ class DoublyLinkedList {
 }
 
 /**
- * We are using Doubly Linked List to implement the cache,
+ * We are using Doubly Linked List to implement the cache(as removal from singly linked list takes linear time),
  * where head represents the least recently used element and the tail represents the most recently used element
  * @param {number} capacity
  */
@@ -102,6 +102,7 @@ var LRUCache = function (capacity) {
 };
 
 /**
+ * The functions get and put must each run in O(1) average time complexity.
  * @param {number} key
  * @return {number}
  */

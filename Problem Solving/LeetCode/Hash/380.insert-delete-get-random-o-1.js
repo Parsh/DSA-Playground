@@ -12,6 +12,7 @@ var RandomizedSet = function () {
 };
 
 /**
+ * You must implement the functions of the class such that each function works in average O(1) time complexity
  * @param {number} val
  * @return {boolean}
  */
