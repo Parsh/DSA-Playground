@@ -15,7 +15,7 @@ const tripletSumClose = (arr, target) => {
   // we can sort the array O(nlogn), as the BTTC for this problem is O(n^2)
   arr.sort((a, b) => a - b);
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length - 2; i++) {
     if (i > 0 && arr[i] === arr[i - 1]) continue; // skipping the same element, to avoid duplicate triplets
 
     // for each iteration, we re-adjust the target which reduces the problem to two sum
@@ -49,6 +49,6 @@ const tripletSumClose = (arr, target) => {
 };
 
 // SMOKE TEST
-const arr = [-2, 0, 1, 2];
-const target = 2;
-console.log(tripletSumClose(arr, target));
+// const arr = [-2, 0, 1, 2];
+// const target = 2;
+// console.log(tripletSumClose(arr, target));
