@@ -51,7 +51,7 @@ var detectCycle = function (head) {
         entry = entry.next;
         slow = slow.next;
       }
-      return slow;
+      return entry;
     }
   }
 
