@@ -11,22 +11,20 @@
  */
 var findMin = function (nums) {
   let left = 0;
-  let right = nums.length - 1;
+  let right = nums.length;
   let minimum = Infinity;
 
-  while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
+  while (left < right) {
+    const mid = left + Math.floor((right - left) / 2);
 
-    // search for the smallest element in the sorted half first
-    // (and then look into the unsorted half, if there exist a relatively smaller element in that half)
-    if (nums[left] <= nums[mid]) {
-      // left is sorted, therefore, the left most element(at index: left) is the smallest element in this half
+    if (nums[mid] >= nums[left]) {
+      // left side is sorted
       minimum = Math.min(minimum, nums[left]);
-      left = mid + 1; // let's search the remaining right half in the next round
+      left = mid + 1;
     } else {
-      // right half is sorted, therefore, the left most element(at index: mid) is the smallest element in this half
+      // right side is sorted
       minimum = Math.min(minimum, nums[mid]);
-      right = mid - 1; // let's search the remaining left half in the next round
+      right = mid;
     }
   }
 
