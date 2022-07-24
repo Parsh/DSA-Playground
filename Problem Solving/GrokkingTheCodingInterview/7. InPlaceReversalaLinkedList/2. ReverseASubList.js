@@ -30,10 +30,10 @@ const reverseSubList = (head, left, right) => {
     current = current.next;
     idx++;
   }
-  const nonReversingLastNode = prev; // last node of the intial non-reversing part of the linked list(if prev is null, )
+  const nonReversingLastNode = prev; // last node of the intial non-reversing part of the linked list
   const reversedSubListLastNode = current; // going to be the last node of the sub-list post reversal
 
-  while (idx <= right) {
+  while (idx <= right && current) {
     // reverse the links of the nodes b/w left & right
     const next = current.next;
     current.next = prev;
@@ -51,7 +51,7 @@ const reverseSubList = (head, left, right) => {
 };
 
 // SMOKE TEST
-// const head = new Node(1);
+// let head = new Node(1);
 // head.next = new Node(2);
 // head.next.next = new Node(3);
 // head.next.next.next = new Node(4);
@@ -59,7 +59,7 @@ const reverseSubList = (head, left, right) => {
 
 // console.log("Nodes of original LinkedList are: ");
 // traverseLinkedList(head);
-// const head = reverseSubList(head, 2, 4);
+// head = reverseSubList(head, 2, 4);
 // console.log("Nodes of reversed LinkedList are: ");
 // traverseLinkedList(head);
 
