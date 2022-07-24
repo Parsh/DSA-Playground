@@ -68,9 +68,9 @@ const insertInterval = (intervals, intervalToInsert) => {
 };
 
 // SMOKE TEST
-const intervals = [new Interval(1, 3), new Interval(5, 7), new Interval(8, 12)];
-const intervalToInsert = new Interval(4, 6);
-const mergedIntervals = insertInterval(intervals, intervalToInsert);
-mergedIntervals.forEach((interval) => {
-  interval.printInterval();
-});
+// const intervals = [new Interval(1, 3), new Interval(5, 7), new Interval(8, 12)];
+// const intervalToInsert = new Interval(4, 6);
+// const mergedIntervals = insertInterval(intervals, intervalToInsert);
+// mergedIntervals.forEach((interval) => {
+//   interval.printInterval();
+// });

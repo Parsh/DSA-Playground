@@ -48,8 +48,8 @@ const mergeIntervals = (intervals) => {
 };
 
 // SMOKE TEST
-const intervals = [new Interval(2, 5), new Interval(1, 4), new Interval(7, 9)];
-const mergedIntervals = mergeIntervals(intervals);
-mergedIntervals.forEach((interval) => {
-  interval.printInterval();
-});
+// const intervals = [new Interval(2, 5), new Interval(1, 4), new Interval(7, 9)];
+// const mergedIntervals = mergeIntervals(intervals);
+// mergedIntervals.forEach((interval) => {
+//   interval.printInterval();
+// });
