@@ -15,7 +15,7 @@
 
 function hasKMoreElements(list, k) {
   let len = 0;
-  while (list && len < max) {
+  while (list && len < k) {
     list = list.next;
     len++;
   }

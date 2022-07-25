@@ -6,7 +6,7 @@
 
 // @lc code=start
 /**
- * note: a comprehensive guide on Binary Search(w/ templates): https://leetcode.com/explore/learn/card/binary-search/138/background/971/
+ * note: a comprehensive guide on Binary Search(w/ templates): https://leetcode.com/explore/learn/card/binary-search/136/template-analysis/935/
  * binary search application on different problems: https://leetcode.com/problems/first-bad-version/discuss/769685/Python-Clear-explanation-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems
  * @param {number[]} nums
  * @param {number} target
