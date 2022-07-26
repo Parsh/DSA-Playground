@@ -13,7 +13,7 @@ class TreeNode {
   }
 }
 
-const levelOrderTraversal = (root) => {
+const reverseLevelOrderTraversal = (root) => {
   if (!root || root.length === 0) return [];
 
   const result = [];
@@ -33,7 +33,7 @@ const levelOrderTraversal = (root) => {
       if (node.right) nextLevel.push(node.right);
     }
 
-    result.push(currentLevelValues);
+    result.unshift(currentLevelValues);
     if (nextLevel.length) queue.push(nextLevel);
   }
   return result;
@@ -46,4 +46,4 @@ const levelOrderTraversal = (root) => {
 // root.left.left = new TreeNode(9);
 // root.right.left = new TreeNode(10);
 // root.right.right = new TreeNode(5);
-// console.log(levelOrderTraversal(root));
+// console.log(reverseLevelOrderTraversal(root));
