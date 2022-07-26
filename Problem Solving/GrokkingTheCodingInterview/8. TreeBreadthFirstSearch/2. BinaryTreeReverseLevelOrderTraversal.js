@@ -17,33 +17,28 @@ const reverseLevelOrderTraversal = (root) => {
   if (!root || root.length === 0) return [];
 
   const result = [];
-  const queue = [[root]];
+  const queue = [root];
   while (queue.length) {
-    const siblings = queue.shift(); // siblings at current level
+    const currentSize = queue.length;
+    const currentLevelValues = [];
 
-    const currentLevelValues = []; // values of the current level siblings
-    const nextLevel = []; // nodes at next level
-
-    for (let i = 0; i < siblings.length; i++) {
-      // iterate over each sibling node, push in the values and gather its child for the next stage
-      const node = siblings[i];
+    for (let i = 0; i < currentSize; i++) {
+      const node = queue.shift();
       currentLevelValues.push(node.val);
-
-      if (node.left) nextLevel.push(node.left);
-      if (node.right) nextLevel.push(node.right);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     }
 
     result.unshift(currentLevelValues);
-    if (nextLevel.length) queue.push(nextLevel);
   }
   return result;
 };
 
 // SMOKE TEST
-// const root = new TreeNode(12);
-// root.left = new TreeNode(7);
-// root.right = new TreeNode(1);
-// root.left.left = new TreeNode(9);
-// root.right.left = new TreeNode(10);
-// root.right.right = new TreeNode(5);
-// console.log(reverseLevelOrderTraversal(root));
+const root = new TreeNode(12);
+root.left = new TreeNode(7);
+root.right = new TreeNode(1);
+root.left.left = new TreeNode(9);
+root.right.left = new TreeNode(10);
+root.right.right = new TreeNode(5);
+console.log(reverseLevelOrderTraversal(root));
