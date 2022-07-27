@@ -64,6 +64,13 @@ const findPathsRecursively = (node, target, allPaths, currentPath = []) => {
   currentPath.pop();
 };
 
+/**
+ * complexity: https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628743930963_55Unit
+ * - time: O(nlogn)
+ * - space: O(nlogn)
+ * @param  {} root
+ * @param  {} target
+ */
 const findAllPaths = (root, target) => {
   const allPaths = [];
   findPathsRecursively(root, target, allPaths);
