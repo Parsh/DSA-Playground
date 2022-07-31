@@ -31,4 +31,21 @@ var subsets = function (nums) {
   return powerset;
 };
 
+/**
+ * approach BFS
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+// var subsets = function (nums) {
+//   const subsets = [[]]; // initialize with an empty subset
+
+//   for (const num of nums) {
+//     // take all existing subsets and insert the current number
+//     // in them to create new subsets
+//     subsets.forEach((existingSubset) => {
+//       subsets.push([...existingSubset, num]);
+//     });
+//   }
+//   return subsets;
+// };
 // @lc code=end

@@ -35,4 +35,31 @@ var subsetsWithDup = function (nums) {
   backtrack(0, []);
   return powerset;
 };
+
+/** approach: BFS
+ * @param  {} nums
+ */
+// var subsetsWithDup = (nums) => {
+//   nums.sort((a, b) => a - b); // sort the array to get the duplicates next to each other
+//   const subsets = [[]];
+//   let start = 0;
+//   let end = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     start = 0;
+//     if (i > 0 && nums[i] === nums[i - 1]) {
+//       // if current and the previous elements are same,
+//       // create new subsets only from the subsets added in the previous step
+//       start = end;
+//     }
+
+//     end = subsets.length;
+//     for (let j = start; j < end; j++) {
+//       const newSub = subsets[j].slice(0);
+//       newSub.push(num);
+//       subsets.push(newSub);
+//     }
+//   }
+//   return subsets;
+// };
 // @lc code=end
