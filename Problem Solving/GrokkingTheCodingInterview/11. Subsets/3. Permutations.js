@@ -1,40 +1,17 @@
-/*
- * @lc app=leetcode id=46 lang=javascript
+/**
+ * Problem Statement:
+ * Given a set of distinct numbers, find all of its permutations.
+ * Note: if a set has ‘n’ distinct elements it will have n! permutations.
  *
- * [46] Permutations
+ * Example:
+ * Input: [1,3,5]
+ * Output: [1,3,5], [1,5,3], [3,1,5], [3,5,1], [5,1,3], [5,3,1]
  */
 
-// @lc code=start
 /**
- * @param {number[]} nums
- * @return {number[][]}
- */
-var permute = function (nums) {
-  const result = [];
-
-  const backTrack = (permutations, elements) => {
-    if (permutations.length === nums.length) {
-      result.push([...permutations]);
-      return;
-    }
-
-    for (const current of elements) {
-      permutations.push(current);
-      backTrack(
-        permutations,
-        elements.filter((element) => element !== current)
-      );
-      permutations.pop();
-    }
-  };
-  backTrack([], nums);
-  return result;
-};
-
-/**
- * approach: BFS
- * @param {number[]} nums
- * @return {number[][]}
+ * complexity: T:O(N*N!), S:O(N*N!)
+ * complexity explanation: https://designgurus.org/path-player?courseid=grokking-the-coding-interview&unit=grokking-the-coding-interview_1628744061506_69Unit
+ * @param  {} nums
  */
 const permute = (nums) => {
   const permutations = [];
@@ -47,7 +24,7 @@ const permute = (nums) => {
     // add the current number to create new candidates
     const numberOfCandidates = candidates.length;
     for (let j = 0; j < numberOfCandidates; j++) {
-      const oldCandidate = candidates.shift();
+      const oldCandidate = candidates.pop();
 
       // create a new permutation by adding the current number at every position
       for (let k = 0; k <= oldCandidate.length; k++) {
@@ -61,4 +38,7 @@ const permute = (nums) => {
   }
   return permutations;
 };
-// @lc code=end
+
+// SMOKE TEST
+// const nums = [1, 3, 5];
+// console.log(permute(nums));
