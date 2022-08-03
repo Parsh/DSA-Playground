@@ -20,8 +20,9 @@ const rangeSearch = (nums, key, findMaxIndex = false) => {
     else if (nums[mid] > key) high = mid - 1;
     else {
       keyIndex = mid;
-      if (findMaxIndex) low = mid + 1;
-      else high = mid - 1;
+      if (findMaxIndex)
+        low = mid + 1; // move forward to find the last index of the key
+      else high = mid - 1; // slides backward to find the first index of the key
     }
   }
   return keyIndex;
