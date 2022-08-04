@@ -12,43 +12,58 @@
  *     this.next = (next===undefined ? null : next)
  * }
  */
+
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+
+  push(val) {
+    const node = new ListNode(val);
+    if (!this.head) {
+      this.head = this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
+}
+
 /**
  * @param {ListNode} list1
  * @param {ListNode} list2
  * @return {ListNode}
  */
 var mergeTwoLists = function (list1, list2) {
-  let head;
-  let tail;
-
-  while (list1 || list2) {
-    let current;
-
-    if (list1 && list2) {
-      if (list1.val <= list2.val) {
-        current = list1;
-        list1 = list1.next;
-      } else {
-        current = list2;
-        list2 = list2.next;
-      }
-    } else if (list1) {
-      current = list1;
+  const linkedList = new LinkedList();
+  while (list1 && list2) {
+    if (list1.val < list2.val) {
+      linkedList.push(list1.val);
       list1 = list1.next;
-    } else if (list2) {
-      current = list2;
-      list2 = list2.next;
-    }
-
-    if (!head) {
-      head = current;
-      tail = current;
     } else {
-      tail.next = current;
-      tail = current;
+      linkedList.push(list2.val);
+      list2 = list2.next;
     }
   }
 
-  return head ? head : list1;
+  while (list1) {
+    linkedList.push(list1.val);
+    list1 = list1.next;
+  }
+
+  while (list2) {
+    linkedList.push(list2.val);
+    list2 = list2.next;
+  }
+
+  return linkedList.head;
 };
 // @lc code=end
