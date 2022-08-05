@@ -20,10 +20,10 @@ const findNumbers = (nums) => {
     n1XORn2 = n1XORn2 ^ num;
   });
 
-  // calculate the mask
+  // calculate the mask(right significant bit), this is where the two numbers have their first different bit
   const rsbm = n1XORn2 & -n1XORn2;
 
-  // filter the numbers based on mask and XOR them
+  // filter the numbers based on mask into two lists and XOR them to find the two numbers
   let n1 = 0;
   let n2 = 0;
   nums.forEach((num) => {
