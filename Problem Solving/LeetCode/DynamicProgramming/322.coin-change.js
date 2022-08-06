@@ -6,28 +6,36 @@
 
 // @lc code=start
 /**
- * approach: brute force: leads to TLE
- * TODO: DP Top-Down(memoised)
+ * approach: DP Top-Down(memoised); brute force: leads to TLE
+ * explanation: https://www.youtube.com/watch?v=-NTaXJ7BBXs
  * @param {number[]} coins
  * @param {number} amount
  * @return {number}
  */
 // var coinChange = function (coins, amount) {
-//   let minimumNumber = Infinity;
+//   const dp = Array(amount + 1).fill(-1);
+//   dp[0] = 0;
+//   const ans = helper(coins, amount, dp);
+//   return ans === Infinity ? -1 : ans;
+// };
 
-//   const backTrack = (coinsCount, target) => {
-//     if (target <= 0) {
-//       if (target === 0) minimumNumber = Math.min(minimumNumber, coinsCount);
-//       return;
-//     }
+// var helper = (coins, amount, dp) => {
+//   if (amount === 0) return 0;
 
-//     for (const coin of coins) {
-//       backTrack(coinsCount + 1, target - coin);
-//     }
-//   };
-//   backTrack(0, amount);
+//   let answer = Infinity;
+//   for (let coin of coins) {
+//     const subAmount = amount - coin;
+//     if (subAmount < 0) continue;
 
-//   return minimumNumber === Infinity ? -1 : minimumNumber;
+//     let subAnswer;
+//     if (dp[subAmount] !== -1) {
+//       subAnswer = dp[subAmount];
+//     } else subAnswer = helper(coins, subAmount, dp);
+
+//     answer = Math.min(answer, subAnswer + 1); // +1, as we've used up one coin
+//   }
+//   dp[amount] = answer;
+//   return dp[amount];
 // };
 
 /**
