@@ -15,27 +15,21 @@
 // var coinChange = function (coins, amount) {
 //   const dp = Array(amount + 1).fill(-1);
 //   dp[0] = 0;
+
+//   var helper = (coins, amount, dp) => {
+//     if (amount === 0) return 0;
+//     if (dp[amount] !== -1) return dp[amount];
+
+//     let answer = Infinity;
+//     for (let coin of coins) {
+//       if (amount - coin < 0) continue;
+//       answer = Math.min(answer, helper(coins, amount - coin, dp) + 1); // +1, as we've used up one coin
+//     }
+//     dp[amount] = answer;
+//     return dp[amount];
+//   };
 //   const ans = helper(coins, amount, dp);
 //   return ans === Infinity ? -1 : ans;
-// };
-
-// var helper = (coins, amount, dp) => {
-//   if (amount === 0) return 0;
-
-//   let answer = Infinity;
-//   for (let coin of coins) {
-//     const subAmount = amount - coin;
-//     if (subAmount < 0) continue;
-
-//     let subAnswer;
-//     if (dp[subAmount] !== -1) {
-//       subAnswer = dp[subAmount];
-//     } else subAnswer = helper(coins, subAmount, dp);
-
-//     answer = Math.min(answer, subAnswer + 1); // +1, as we've used up one coin
-//   }
-//   dp[amount] = answer;
-//   return dp[amount];
 // };
 
 /**
