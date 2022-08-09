@@ -22,7 +22,7 @@
 
 //     let ans = 0;
 //     for (let i = 0; i < nums.length; i++) {
-//       ans += dpMemoized(nums, target - nums[i], dp);
+//       ans += helper(nums, target - nums[i], dp);
 //     }
 //     dp[target] = ans;
 //     return ans;
