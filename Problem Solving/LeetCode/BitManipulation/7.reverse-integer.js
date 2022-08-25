@@ -6,6 +6,7 @@
 
 // @lc code=start
 /**
+ * approach: https://www.youtube.com/watch?v=HAgLH58IgJQ
  * @param {number} x
  * @return {number}
  */
