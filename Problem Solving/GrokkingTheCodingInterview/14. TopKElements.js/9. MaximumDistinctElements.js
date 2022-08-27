@@ -2,6 +2,12 @@
  * Problem Statement:
  * Given an array of numbers and a number ‘K’, we need to remove ‘K’ numbers
  * from the array such that we are left with maximum distinct numbers.
+ *
+ * Example:
+ * Input: [7, 3, 5, 8, 5, 3, 3], and K=2
+ * Output: 3
+ * Explanation: We can remove two occurrences of 3 to be left with 3 distinct numbers [7, 3, 8], we have
+ * to skip 5 because it is not distinct and occurred twice.
  */
 
 const {
@@ -37,6 +43,6 @@ const maximumDistinctElements = (nums, k) => {
 };
 
 // SMOKE TEST
-const nums = [3, 5, 12, 11, 12];
-const k = 3;
-console.log(maximumDistinctElements(nums, k));
+// const nums = [3, 5, 12, 11, 12];
+// const k = 3;
+// console.log(maximumDistinctElements(nums, k));
