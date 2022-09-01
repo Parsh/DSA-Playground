@@ -18,24 +18,34 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  let linkedList = new LinkedList();
+  const list = new LinkedList();
+
   let carry = 0;
-  while (l1 || l2) {
-    const operand1 = l1 ? l1.val : 0;
-    const operand2 = l2 ? l2.val : 0;
-    const sum = operand1 + operand2 + carry;
-
-    const digit = sum % 10;
-    carry = sum > 9 ? 1 : 0;
-    linkedList.push(digit);
-
-    l1 = l1 ? l1.next : null;
-    l2 = l2 ? l2.next : null;
+  while (l1 && l2) {
+    const sum = l1.val + l2.val + carry;
+    list.push(sum % 10);
+    carry = Math.floor(sum / 10);
+    l1 = l1.next;
+    l2 = l2.next;
   }
 
-  // add in the last carry(if exist)
-  if (carry) linkedList.push(carry);
-  return linkedList.head;
+  while (l1) {
+    const sum = l1.val + carry;
+    list.push(sum % 10);
+    carry = Math.floor(sum / 10);
+    l1 = l1.next;
+  }
+
+  while (l2) {
+    const sum = l2.val + carry;
+    list.push(sum % 10);
+    carry = Math.floor(sum / 10);
+    l2 = l2.next;
+  }
+
+  if (carry) list.push(carry);
+
+  return list.head;
 };
 
 class LinkedList {
